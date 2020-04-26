@@ -39,7 +39,7 @@ body,
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   .el-main {
-    padding: 10px;
+    padding: 10px 0;
   }
 }
 

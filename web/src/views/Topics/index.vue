@@ -61,12 +61,10 @@ export default {
     },
     getList () {
       this.loading = true
-      console.log(this.tab)
       const tab = this.tab
       getTopics({ tab: tab === '0' ? '' : tab, page: this.curPage, limit: this.limit }).then((res) => {
         this.loading = false
         if (res && res.data) {
-          console.log(res)
           this.list = res.data
         }
       })
