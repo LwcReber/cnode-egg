@@ -26,7 +26,6 @@ export default {
       this.loading = true
       getTopicInfo(this.id).then(res => {
         this.loading = false
-        console.log(res)
         this.data = res.data
       })
     }

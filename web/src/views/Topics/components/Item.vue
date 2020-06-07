@@ -3,7 +3,7 @@
     <div>{{data.title}}</div>
     <el-row class="item-footer">
       <el-col :span="6" class="user">
-        <img class="avatar" v-if="data.author" :src="data.author.avatar_url" alt="">
+        <ViewAvatar textImgError :text="data.author.loginname" quickWidth="20px" class="autor" v-if="data.author" :src="data.author.avatar_url" alt=""/>
         <i v-else class="el-icon-user-solid"></i>
        <span>{{data.author.loginname}}</span>
       </el-col>
@@ -15,7 +15,9 @@
 </template>
 
 <script>
+import ViewAvatar from 'view-avatar'
 export default {
+  components: { ViewAvatar },
   props: {
     data: Object
   },
@@ -85,13 +87,14 @@ export default {
       background: #efefef;
     }
   }
-  .avatar {
+  .autor {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     display: inline-block;
     vertical-align: middle;
     margin-right: 5px;
+    overflow: hidden;
   }
   .time {
     text-align: right;
